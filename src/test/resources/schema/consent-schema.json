@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "consentId": { "type": "string" },
+    "recurringIndicator": { "type": "boolean" },
+    "consentStatus": {
+      "type": "object",
+      "properties": {
+        "consent_status": { "type": "string" }
+      },
+      "required": ["consent_status"]
+    },
+    "validUntil": { "type": "string", "format": "date" },
+    "frequencyPerDay": { "type": "integer" },
+    "combinedServiceIndicator": { "type": "boolean" }
+  },
+  "required": ["consentId", "recurringIndicator", "validUntil", "frequencyPerDay", "consentStatus", "combinedServiceIndicator"]
+}

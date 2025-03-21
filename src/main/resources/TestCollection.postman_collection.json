@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "53b85af1-cca2-470e-87f6-67e08fbc3f90",
+		"name": "TestCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5523168"
+	},
+	"item": [
+		{
+			"name": "Create Mock Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"recurringIndicator\": true,\n  \"frequencyPerDay\": 2,\n  \"validUntil\": \"2019-12-27\",\n  \"access\": {\n    \"allPsd2\": \"allAccounts\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/insertTestData",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"insertTestData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Consent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"recurringIndicator\": true,\n  \"frequencyPerDay\": 2,\n  \"validUntil\": \"2019-12-27\",\n  \"access\": {\n    \"allPsd2\": \"allAccounts\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/consents/0000000",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"consents",
+						"0000000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Consent Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/consents/0000001/status",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"consents",
+						"0000001",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Consent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/consents/bob",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"consents",
+						"bob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Consent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/consents/bob",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"consents",
+						"bob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Accounts and Transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Consent-Id",
+						"value": "0000002",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/card-accounts/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"card-accounts",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Account Index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Consent-Id",
+						"value": "0000002",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/card-accounts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"card-accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeConsentStatusForTest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/debug/consent/0000001/valid",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"debug",
+						"consent",
+						"0000001",
+						"valid"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

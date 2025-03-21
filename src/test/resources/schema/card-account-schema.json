@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "accountId": { "type": "string" },
+    "maskedPan": { "type": "string" }
+  },
+  "required": ["accountId", "maskedPan"]
+}

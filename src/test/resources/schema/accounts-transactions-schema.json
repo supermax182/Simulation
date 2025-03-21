@@ -1,0 +1,71 @@
+{
+  "type": "object",
+  "properties": {
+    "balances": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "balanceAmount": {
+            "type": "object",
+            "properties": {
+              "currency": { "type": "string" },
+              "amount": { "type": "string" }
+            },
+            "required": ["currency", "amount"]
+          },
+          "balanceType": { "type": "string" }
+        },
+        "required": ["balanceAmount", "balanceType"]
+      }
+    },
+    "cardTransactions": {
+      "type": "object",
+      "properties": {
+        "pending": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cardTransactionId": { "type": "string" },
+              "terminalId": { "type": ["string", "null"] },
+              "transactionDate": { "type": "string" },
+              "bookingDate": { "type": ["string", "null"] },
+              "status": { "type": ["string", "null"] },
+              "transactionAmount": {
+                "type": "object",
+                "properties": {
+                  "currency": { "type": "string" },
+                  "amount": { "type": "string" }
+                },
+                "required": ["currency", "amount"]
+              },
+              "currencyExchange": { "type": ["object", "null"] },
+              "originalAmount": { "type": ["number", "null"] },
+              "markupFee": { "type": ["number", "null"] },
+              "markupFeePercentage": { "type": ["number", "null"] },
+              "cardAcceptorId": { "type": ["string", "null"] },
+              "cardAcceptorAddress": { "type": ["object", "null"] },
+              "merchantCategoryCode": { "type": ["string", "null"] },
+              "maskedPAN": { "type": "string" },
+              "transactionDetails": { "type": ["string", "null"] },
+              "invoiced": { "type": "boolean" },
+              "proprietaryBankTransactionCode": { "type": ["string", "null"] }
+            },
+            "required": ["cardTransactionId", "transactionDate", "transactionAmount", "maskedPAN"]
+          }
+        }
+      }
+    },
+    "cardAccount": {
+      "type": "object",
+      "properties": {
+        "maskedPan": { "type": "string" },
+        "accountId": { "type": "string" }
+      },
+      "required": ["maskedPan", "accountId"]
+    },
+    "_links": { "type": ["object", "null"] }
+  },
+  "required": ["balances", "cardTransactions", "cardAccount"]
+}

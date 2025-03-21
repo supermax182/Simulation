@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "consent_status": { "type": "string" }
+  },
+  "required": ["consent_status"]
+}
