@@ -1,7 +1,5 @@
-
 Feature: API Testing for Consent Management
 
-@Run
   Scenario: Create a new consent
     Given User creates a new consent with ID "0000001"
     When User sends a request to create the consent
@@ -39,11 +37,11 @@ Feature: API Testing for Consent Management
     Then the response status code should be 200
     And log the last API response
 
-#  @Run
-#  Scenario: Change consent status to invalid
-#    Given User creates a new consent with ID "0000001"
-#    When User changes consent status for ID "0000001" to "invalid"
-#    Then the response status code should be 200
+  Scenario: Change consent status to invalid
+    Given User creates a new consent with ID "0000001"
+    When User changes consent status for ID "0000001" to "invalid"
+    Then the response status code should be 200
+    And log the last API response
 
   @negative
   Scenario: Get non-existent consent
@@ -57,14 +55,12 @@ Feature: API Testing for Consent Management
     Then the response status code should be 404
     And log the last API response
 
-  @smoke
   Scenario: Delete consent
     Given Consent with ID "0000001" exists
     When User deletes the consent with ID "0000001"
     Then the response status code should be 204
     And requesting consent with ID "0000001" should return 404
     And log the last API response
-
 
   @negative
   Scenario: Get transactions with revoked Consent

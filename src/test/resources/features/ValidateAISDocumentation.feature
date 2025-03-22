@@ -1,7 +1,6 @@
-
 Feature: Validate API Documentation for AIS
 
-
+  @UI
   Scenario: Validate request parameters in AIS Authorisation section
    Given User opens the AIS API documentation page
    When User waits for Request parameters specifically in Authorisation
@@ -11,7 +10,7 @@ Feature: Validate API Documentation for AIS
       | consent_id       | string, required | The consent identifier assigned to the created resource.                 |
       | authorisation_id | string, required | Unique resource identification of the created authorization subresource. |
 
-
+  @UI
   Scenario: Validate response parameters in AIS Authorisation section
     Given User opens the AIS API documentation page
     When User waits for Response parameters specifically in Authorisation

@@ -19,8 +19,6 @@ public class ConsentSteps {
         this.scenarioContext = scenarioContext;
     }
 
-    // -------------- СОЗДАНИЕ CONSENT --------------
-
     @Given("User creates a new consent with ID {string}")
     public void userCreatesANewConsent(String consentId) {
         scenarioContext.save(ScenarioContextKey.CONSENT_ID, consentId);
@@ -51,8 +49,6 @@ public class ConsentSteps {
         scenarioContext.get(ScenarioContextKey.LAST_RESPONSE, Response.class)
                 .then().body("consentId", equalTo(expectedConsentId));
     }
-
-    // -------------- ПРОВЕРКА STATUS --------------
 
     @Given("Consent with ID {string} exists")
     public void consentWithIDExists(String consentId) {
@@ -89,9 +85,6 @@ public class ConsentSteps {
         scenarioContext.save(ScenarioContextKey.LAST_RESPONSE, response);
     }
 
-
-    // -------------- ПРОВЕРКА CONSENT DETAILS --------------
-
     @When("User requests consent details for ID {string}")
     public void userRequestsConsentDetails(String consentId) {
         Response response = given()
@@ -100,8 +93,6 @@ public class ConsentSteps {
 
         scenarioContext.save(ScenarioContextKey.LAST_RESPONSE, response);
     }
-
-    // -------------- УДАЛЕНИЕ CONSENT --------------
 
     @When("User deletes the consent with ID {string}")
     public void userDeletesTheConsent(String consentId) {

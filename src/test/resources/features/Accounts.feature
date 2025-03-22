@@ -1,6 +1,5 @@
 Feature: Accounts API
 
-
   Scenario: Get accounts and transactions
     Given User requests to generate mock data
     And User creates a new consent with ID "0000001"
@@ -15,7 +14,6 @@ Feature: Accounts API
     And the field "cardAccount.accountId" should be "ACC0000001"
     And the field "cardTransactions.booked[0].cardTransactionId" should be "B2001"
     And log the last API response
-
 
   Scenario: Get account index
     Given User requests to generate mock data

@@ -115,6 +115,11 @@
 			<version>5.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.11.0</version>
+		</dependency>
 
 	</dependencies>
 
@@ -132,22 +137,16 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/cucumber-reports/${maven.build.timestamp}/report</outputDirectory>
+							<projectName>SimulateAis</projectName>
 							<jsonFiles>
-								<param>${project.build.directory}/cucumber-reports/${maven.build.timestamp}/report/cucumber-report.json</param>
+								<param>target/cucumber-report.json</param>
 							</jsonFiles>
-							<reportName>Cucumber Report</reportName>
-							<buildNumber>${maven.build.timestamp}</buildNumber>
+							<outputDirectory>target/cucumber-reports</outputDirectory>
+							<skip>false</skip>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-
-
-
-
-
-
 		</plugins>
 	</build>
 

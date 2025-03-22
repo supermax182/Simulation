@@ -1,7 +1,6 @@
-
 Feature: Validate API Documentation for PIIS
 
-  @UI @Ru
+  @UI
   Scenario: Validate request parameters in PIIS Status section
     Given User opens the PIIS API documentation page
     Then User waits for Request parameters specifically in PIIS Status
@@ -10,7 +9,7 @@ Feature: Validate API Documentation for PIIS
       | provider_code | string, required | Human readable Provider identifier.                      |
       | consent_id    | string, required | The consent identifier assigned to the created resource. |
 
-  @UI @Run
+  @UI
   Scenario: Validate response parameters in PIIS Status section
     Given User opens the PIIS API documentation page
     Then User waits for Response parameters specifically in PIIS Status
